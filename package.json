@@ -10,9 +10,9 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && tsdx build --tsconfig tsconfig.build.json",
-    "lint": "eslint \"**/src/**/*.{js,ts}\"",
+    "lint": "eslint src/**/*.ts",
     "lint:fix": "yarn lint --fix",
-    "prettier": "prettier \"**/src/**/*.{js,ts}\"",
+    "prettier": "prettier src/**/*.ts",
     "prettier:fix": "yarn prettier --write",
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean",
     "test": "jest",
