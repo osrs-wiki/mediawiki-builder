@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.1.2
+
+### Patch Changes
+
+- faefd29: Fix type exporting
+
 ## 1.1.1
 
 ### Patch Changes
