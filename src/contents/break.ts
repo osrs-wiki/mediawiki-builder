@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiBreak extends MediaWikiContent {
+export class MediaWikiBreak extends MediaWikiContent {
   constructor() {
     super();
   }
@@ -9,5 +9,3 @@ class MediaWikiBreak extends MediaWikiContent {
     return "\n";
   }
 }
-
-export default MediaWikiBreak;

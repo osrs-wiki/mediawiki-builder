@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiHTML extends MediaWikiContent {
+export class MediaWikiHTML extends MediaWikiContent {
   attributes?: { [key: string]: string };
   tag: string;
 
@@ -24,5 +24,3 @@ class MediaWikiHTML extends MediaWikiContent {
     }>\n${this.buildChildren()}\n</${this.tag}>\n`;
   }
 }
-
-export default MediaWikiHTML;

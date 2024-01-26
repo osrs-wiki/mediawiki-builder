@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiVideo extends MediaWikiContent {
+export class MediaWikiVideo extends MediaWikiContent {
   label: string;
   link: string;
 
@@ -14,5 +14,3 @@ class MediaWikiVideo extends MediaWikiContent {
     return `<center><big><big>[${this.link} ${this.label}]</big></big></center>\n`;
   }
 }
-
-export default MediaWikiVideo;

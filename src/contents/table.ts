@@ -8,7 +8,7 @@ export type MediaWikiTableOptions = {
   headers?: string[];
 };
 
-class MediaWikiTable extends MediaWikiContent {
+export class MediaWikiTable extends MediaWikiContent {
   options?: MediaWikiTableOptions;
   rows: MediaWikiTableRow[];
 
@@ -40,5 +40,3 @@ class MediaWikiTable extends MediaWikiContent {
       .join("")}|}`;
   }
 }
-
-export default MediaWikiTable;

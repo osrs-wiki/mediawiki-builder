@@ -1,11 +1,11 @@
 import MediaWikiContent from "../content";
 
-type MediaWikiListItemOptions = {
+export type MediaWikiListItemOptions = {
   level: number;
   ordered?: boolean;
 };
 
-class MediaWikiListItem extends MediaWikiContent {
+export class MediaWikiListItem extends MediaWikiContent {
   value: MediaWikiContent[] | MediaWikiContent | string;
   options: MediaWikiListItemOptions;
 
@@ -32,5 +32,3 @@ class MediaWikiListItem extends MediaWikiContent {
     )} ${parsedValue.trim()}`;
   }
 }
-
-export default MediaWikiListItem;

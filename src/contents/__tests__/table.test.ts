@@ -1,5 +1,5 @@
-import MediaWikiTable from "../table";
-import MediaWikiText from "../text";
+import { MediaWikiTable } from "../table";
+import { MediaWikiText } from "../text";
 
 describe("MediaWikiTable", () => {
   test("it should build correctly", () => {

@@ -1,4 +1,4 @@
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
 export abstract class Template {
   name: string;

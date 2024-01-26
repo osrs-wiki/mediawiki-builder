@@ -1,8 +1,8 @@
-import MediaWikiDate from "../../../date";
-import MediaWikiFile from "../../../file";
-import MediaWikiLink from "../../../link";
+import { MediaWikiDate } from "../../../date";
+import { MediaWikiFile } from "../../../file";
+import { MediaWikiLink } from "../../../link";
 
-type InfoboxNpc = {
+export type InfoboxNpc = {
   name: string;
   image: MediaWikiFile;
   release: MediaWikiDate | "";
@@ -23,5 +23,3 @@ type InfoboxNpc = {
   id: string;
   trailblazerRegion?: string;
 };
-
-export default InfoboxNpc;

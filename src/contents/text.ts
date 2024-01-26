@@ -1,12 +1,12 @@
 import MediaWikiContent from "../content";
 
-type MediaWikiTextStyling = {
+export type MediaWikiTextStyling = {
   italics?: boolean;
   bold?: boolean;
   underline?: boolean;
 };
 
-class MediaWikiText extends MediaWikiContent {
+export class MediaWikiText extends MediaWikiContent {
   value: string;
   styling?: MediaWikiTextStyling;
 
@@ -32,5 +32,3 @@ class MediaWikiText extends MediaWikiContent {
     return `${this.value}`;
   }
 }
-
-export default MediaWikiText;

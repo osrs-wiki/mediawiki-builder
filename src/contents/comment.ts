@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiComment extends MediaWikiContent {
+export class MediaWikiComment extends MediaWikiContent {
   comment: string;
 
   constructor(comment: string) {
@@ -12,5 +12,3 @@ class MediaWikiComment extends MediaWikiContent {
     return `<!-- ${this.comment} -->`;
   }
 }
-
-export default MediaWikiComment;

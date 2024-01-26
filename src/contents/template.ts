@@ -1,8 +1,8 @@
 import MediaWikiContent from "../content";
 
-type TemplateParam = { key: string; value: string };
+export type TemplateParam = { key: string; value: string };
 
-class MediaWikiTemplate extends MediaWikiContent {
+export class MediaWikiTemplate extends MediaWikiContent {
   name: string;
   params: TemplateParam[];
 
@@ -27,5 +27,3 @@ class MediaWikiTemplate extends MediaWikiContent {
     return `{{${this.name}${params}${this.params.length > 3 ? "\n" : ""}}}\n`;
   }
 }
-
-export default MediaWikiTemplate;

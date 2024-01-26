@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiTOC extends MediaWikiContent {
+export class MediaWikiTOC extends MediaWikiContent {
   constructor() {
     super();
   }
@@ -9,5 +9,3 @@ class MediaWikiTOC extends MediaWikiContent {
     return "__TOC__\n";
   }
 }
-
-export default MediaWikiTOC;

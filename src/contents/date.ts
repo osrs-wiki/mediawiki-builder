@@ -1,12 +1,12 @@
 import MediaWikiContent from "../content";
 
-type DateOptions = {
+export type DateOptions = {
   day: boolean;
   month: boolean;
   year: boolean;
 };
 
-class MediaWikiDate extends MediaWikiContent {
+export class MediaWikiDate extends MediaWikiContent {
   date: Date;
   options: DateOptions;
 
@@ -31,5 +31,3 @@ class MediaWikiDate extends MediaWikiContent {
     }`.trim();
   }
 }
-
-export default MediaWikiDate;
