@@ -1,7 +1,7 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-class CollapedSectionTemplate extends Template {
+export class CollapedSectionTemplate extends Template {
   length: number;
   title: string;
 
@@ -18,5 +18,3 @@ class CollapedSectionTemplate extends Template {
     return collapsibleTemplate;
   }
 }
-
-export default CollapedSectionTemplate;

@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiHeader extends MediaWikiContent {
+export class MediaWikiHeader extends MediaWikiContent {
   value?: string;
   level: number;
 
@@ -27,5 +27,3 @@ class MediaWikiHeader extends MediaWikiContent {
     return `${"=".repeat(this.level)}${parsedValue}${"=".repeat(this.level)}`;
   }
 }
-
-export default MediaWikiHeader;

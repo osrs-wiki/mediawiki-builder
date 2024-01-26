@@ -1,13 +1,13 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-type UpdateTemplateParams = {
+export type UpdateTemplateParams = {
   category: string;
   date: string;
   url: string;
 };
 
-class UpdateTemplate extends Template {
+export class UpdateTemplate extends Template {
   category: string;
   date: string;
   url: string;
@@ -27,5 +27,3 @@ class UpdateTemplate extends Template {
     return updateTemplate;
   }
 }
-
-export default UpdateTemplate;

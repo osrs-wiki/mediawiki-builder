@@ -1,12 +1,12 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
 export type PollAnswer = {
   answer: string;
   vote: string;
 };
 
-class PollTemplate extends Template {
+export class PollTemplate extends Template {
   answers: PollAnswer[];
   question: string;
 
@@ -26,5 +26,3 @@ class PollTemplate extends Template {
     return pollTemplate;
   }
 }
-
-export default PollTemplate;

@@ -1,9 +1,9 @@
-import MediaWikiDate from "../../../date";
-import MediaWikiFile from "../../../file";
-import MediaWikiLink from "../../../link";
+import { MediaWikiDate } from "../../../date";
+import { MediaWikiFile } from "../../../file";
+import { MediaWikiLink } from "../../../link";
 import { InfoboxNo } from "../infobox";
 
-type InfoboxItem = {
+export type InfoboxItem = {
   name: string;
   image: MediaWikiFile;
   release: MediaWikiDate | "";
@@ -34,5 +34,3 @@ type InfoboxItem = {
   id: string;
   trailblazerRegion?: string;
 };
-
-export default InfoboxItem;

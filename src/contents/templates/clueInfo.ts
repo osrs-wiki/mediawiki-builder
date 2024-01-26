@@ -1,7 +1,7 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-class ClueInfoTemplate extends Template {
+export class ClueInfoTemplate extends Template {
   id: string;
   text?: string;
   items?: string;
@@ -41,5 +41,3 @@ class ClueInfoTemplate extends Template {
     return clueInfoTemplate;
   }
 }
-
-export default ClueInfoTemplate;

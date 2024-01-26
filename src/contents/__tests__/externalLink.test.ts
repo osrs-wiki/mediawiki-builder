@@ -1,4 +1,4 @@
-import MediaWikiExternalLink from "../externalLink";
+import { MediaWikiExternalLink } from "../externalLink";
 
 describe("MediaWikiExternalLink", () => {
   test("it should build correctly", () => {

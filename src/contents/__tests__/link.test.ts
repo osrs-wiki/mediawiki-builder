@@ -1,4 +1,4 @@
-import MediaWikiLink from "../link";
+import { MediaWikiLink } from "../link";
 
 describe("MediaWikiBreak", () => {
   it("should build correctly with a label", () => {

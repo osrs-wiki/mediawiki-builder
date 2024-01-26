@@ -1,4 +1,4 @@
-import ListenTemplate, { ListeTemplateOptions } from "../listen";
+import { ListenTemplate, ListeTemplateOptions } from "../listen";
 
 describe("ListenTemplate", () => {
   test("it should render with only a file", () => {

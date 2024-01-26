@@ -1,5 +1,5 @@
-import MediaWikiHeader from "../header";
-import MediaWikiText from "../text";
+import { MediaWikiHeader } from "../header";
+import { MediaWikiText } from "../text";
 
 describe("MediaWikiHeader", () => {
   test("it should build correctly with a string value", () => {

@@ -1,11 +1,11 @@
 import MediaWikiContent from "../../../content";
-import MediaWikiTemplate from "../../template";
+import { MediaWikiTemplate } from "../../template";
 import { Template } from "../types";
 
 export type InfoboxNo = "No";
 export type InfoboxYesNo = "Yes" | InfoboxNo;
 
-class InfoboxTemplate<T> extends Template {
+export class InfoboxTemplate<T> extends Template {
   params: T;
 
   constructor(name: string, params: T) {
@@ -33,5 +33,3 @@ class InfoboxTemplate<T> extends Template {
     return infoboxTemplate;
   }
 }
-
-export default InfoboxTemplate;

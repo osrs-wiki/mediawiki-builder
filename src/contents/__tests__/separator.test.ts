@@ -1,4 +1,4 @@
-import MediaWikiSeparator from "../separator";
+import { MediaWikiSeparator } from "../separator";
 
 describe("MediaWikiSeparator", () => {
   test("it should build correctly", () => {

@@ -1,6 +1,6 @@
 import MediaWikiContent from "../content";
 
-class MediaWikiExternalLink extends MediaWikiContent {
+export class MediaWikiExternalLink extends MediaWikiContent {
   label: string;
   link: string;
 
@@ -14,5 +14,3 @@ class MediaWikiExternalLink extends MediaWikiContent {
     return `[${this.link} ${this.label}]`;
   }
 }
-
-export default MediaWikiExternalLink;

@@ -1,8 +1,8 @@
 import { Template } from "./types";
 import MediaWikiContent from "../../content";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-class LetterTemplate extends Template {
+export class LetterTemplate extends Template {
   value: MediaWikiContent[] | MediaWikiContent | string;
 
   constructor(value: MediaWikiContent[] | MediaWikiContent | string) {
@@ -24,5 +24,3 @@ class LetterTemplate extends Template {
     return letterTemplate;
   }
 }
-
-export default LetterTemplate;

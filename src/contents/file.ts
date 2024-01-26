@@ -1,7 +1,7 @@
-import MediaWikiText from "./text";
+import { MediaWikiText } from "./text";
 import MediaWikiContent from "../content";
 
-type MediaWikiFileOptions = {
+export type MediaWikiFileOptions = {
   caption?: MediaWikiText;
   format?: "frameless" | "frame" | "thumb";
   resizing?: {
@@ -20,7 +20,7 @@ type MediaWikiFileOptions = {
   link?: string;
 };
 
-class MediaWikiFile extends MediaWikiContent {
+export class MediaWikiFile extends MediaWikiContent {
   fileName: string;
   options?: MediaWikiFileOptions;
 
@@ -65,5 +65,3 @@ class MediaWikiFile extends MediaWikiContent {
     return `[[File:${this.fileName}${options}]]`;
   }
 }
-
-export default MediaWikiFile;

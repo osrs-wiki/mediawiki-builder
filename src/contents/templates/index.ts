@@ -1,14 +1,10 @@
-export { default as CollapedSectionTemplate } from "./collapsedSection";
-export { default as ClueInfoTemplate } from "./clueInfo";
-export { default as InfoboxTemplate } from "./infobox";
-export { default as LetterTemplate } from "./letter";
-export { default as ListenTemplate } from "./listen";
-export { default as NewsPollTemplate } from "./newsPoll";
-export { default as PollTemplate } from "./poll";
-export { default as PollNoticeTemplate } from "./pollNotice";
-export { default as PollWrapperTemplate } from "./pollWrapper";
-export { default as UpdateTemplate } from "./update";
-
+export * from "./collapsedSection";
+export * from "./clueInfo";
 export * from "./infobox";
+export * from "./letter";
 export * from "./listen";
+export * from "./newsPoll";
 export * from "./poll";
+export * from "./pollNotice";
+export * from "./pollWrapper";
+export * from "./update";

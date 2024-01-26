@@ -1,7 +1,7 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-class NewsPollTemplate extends Template {
+export class NewsPollTemplate extends Template {
   number?: number;
   question: string;
 
@@ -20,5 +20,3 @@ class NewsPollTemplate extends Template {
     return newsPollTemplate;
   }
 }
-
-export default NewsPollTemplate;

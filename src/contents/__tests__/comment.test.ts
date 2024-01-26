@@ -1,4 +1,4 @@
-import MediaWikiComment from "../comment";
+import { MediaWikiComment } from "../comment";
 
 describe("MediaWikiComment", () => {
   test("it should build correctly", () => {

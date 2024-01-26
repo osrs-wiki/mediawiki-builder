@@ -1,9 +1,9 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-type PollPosition = "bottom" | "top";
+export type PollPosition = "bottom" | "top";
 
-class PollWrapperTemplate extends Template {
+export class PollWrapperTemplate extends Template {
   position: PollPosition;
 
   constructor(position: PollPosition) {
@@ -17,5 +17,3 @@ class PollWrapperTemplate extends Template {
     return pollWrapperTemplate;
   }
 }
-
-export default PollWrapperTemplate;

@@ -1,4 +1,4 @@
-import MediaWikiBreak from "../break";
+import { MediaWikiBreak } from "../break";
 
 describe("MediaWikiBreak", () => {
   test("it should build correctly", () => {

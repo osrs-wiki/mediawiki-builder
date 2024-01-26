@@ -1,7 +1,7 @@
 import { Template } from "./types";
-import MediaWikiTemplate from "../template";
+import { MediaWikiTemplate } from "../template";
 
-class PollNoticeTemplate extends Template {
+export class PollNoticeTemplate extends Template {
   end: string;
   number: number;
   start: string;
@@ -21,5 +21,3 @@ class PollNoticeTemplate extends Template {
     return pollNoticeTemplate;
   }
 }
-
-export default PollNoticeTemplate;
