@@ -40,3 +40,4 @@ jobs:
           commit: Version Release
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISH_PACKAGES }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
