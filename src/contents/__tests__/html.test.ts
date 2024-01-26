@@ -1,5 +1,5 @@
-import MediaWikiHTML from "../html";
-import MediaWikiText from "../text";
+import { MediaWikiHTML } from "../html";
+import { MediaWikiText } from "../text";
 
 describe("MediaWikiHTML", () => {
   test("it should build correctly", () => {
