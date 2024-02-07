@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaWikiTable it should build correctly with no options 1`] = `
+"{|
+|-
+!test1
+!test2
+|-
+|'''test1''' table1
+|'''test2''' table2
+|-
+|''test3'' table3
+|test4
+ table4
+|}"
+`;
+
+exports[`MediaWikiTable it should build correctly with table options 1`] = `
+"{| class=\\"wikitable\\"
+|-
+!header
+|-
+|value
+|}"
+`;

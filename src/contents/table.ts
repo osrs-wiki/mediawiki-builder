@@ -1,39 +1,68 @@
 import MediaWikiContent from "../content";
 
-export type MediaWikiTableRow = MediaWikiContent[][];
+export type MediaWikiTableRow = {
+  cells: MediaWikiTableCell[];
+  header?: boolean;
+  options?: MediaWikiCellOptions;
+};
+
+export type MediaWikiTableCell = {
+  content: MediaWikiContent[];
+  options?: MediaWikiCellOptions;
+};
+
+export type MediaWikiTableParams = {
+  caption?: string;
+  rows: MediaWikiTableRow[];
+  options?: MediaWikiTableOptions;
+};
 
 export type MediaWikiTableOptions = {
-  caption?: string;
-  center?: boolean;
-  headers?: string[];
+  class?: string;
+  style?: string;
+};
+
+export type MediaWikiCellOptions = {
+  class?: string;
+  colspan?: string;
+  rowspan?: string;
+  style?: string;
 };
 
 export class MediaWikiTable extends MediaWikiContent {
+  caption?: string;
   options?: MediaWikiTableOptions;
   rows: MediaWikiTableRow[];
 
-  constructor(rows: MediaWikiTableRow[], options?: MediaWikiTableOptions) {
+  constructor(params: MediaWikiTableParams) {
     super();
-    this.rows = rows;
-    this.options = options;
+    this.caption = params.caption;
+    this.rows = params.rows;
+    this.options = params.options;
   }
 
   build() {
-    return `{| class="wikitable"${
-      this.options?.center ? ' style="text-align: center;"' : ""
-    }\n${this.options?.caption ? `|+${this.options.caption}\n` : ""}${
-      this.options?.headers
-        ? `|-\n` +
-          this.options?.headers.map((header) => `!${header}\n`).join("")
-        : ""
+    const tableOptions = this.options
+      ? Object.keys(this.options).reduce(
+          (total, key) =>
+            `${total} ${key}="${
+              this.options?.[key as keyof MediaWikiTableOptions]
+            }"`,
+          ""
+        )
+      : "";
+    return `{|${tableOptions}\n${
+      this.caption ? `|+${this.caption}\n` : ""
     }${this.rows
       .map(
         (row) =>
           `|-\n` +
-          row
+          row.cells
             .map(
-              (columns) =>
-                `|` + columns.map((column) => column.build()).join("") + "\n"
+              (cell) =>
+                (row.header ? `!` : `|`) +
+                cell.content.map((content) => content.build()).join("") +
+                "\n"
             )
             .join("")
       )
