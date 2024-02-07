@@ -1,14 +1,16 @@
 import MediaWikiContent from "../content";
+import { toKeyValueString } from "../utils/objects";
 
 export type MediaWikiTableRow = {
   cells: MediaWikiTableCell[];
   header?: boolean;
-  options?: MediaWikiCellOptions;
+  minimal?: boolean;
+  options?: MediaWikiTableRowOptions;
 };
 
 export type MediaWikiTableCell = {
   content: MediaWikiContent[];
-  options?: MediaWikiCellOptions;
+  options?: MediaWikiTableCellOptions;
 };
 
 export type MediaWikiTableParams = {
@@ -22,10 +24,15 @@ export type MediaWikiTableOptions = {
   style?: string;
 };
 
-export type MediaWikiCellOptions = {
+export type MediaWikiTableRowOptions = {
   class?: string;
-  colspan?: string;
-  rowspan?: string;
+  style?: string;
+};
+
+export type MediaWikiTableCellOptions = {
+  class?: string;
+  colspan?: number;
+  rowspan?: number;
   style?: string;
 };
 
@@ -43,28 +50,35 @@ export class MediaWikiTable extends MediaWikiContent {
 
   build() {
     const tableOptions = this.options
-      ? Object.keys(this.options).reduce(
-          (total, key) =>
-            `${total} ${key}="${
-              this.options?.[key as keyof MediaWikiTableOptions]
-            }"`,
-          ""
-        )
+      ? " " + toKeyValueString<MediaWikiTableOptions>(this.options)
       : "";
     return `{|${tableOptions}\n${
       this.caption ? `|+${this.caption}\n` : ""
     }${this.rows
       .map(
         (row) =>
-          `|-\n` +
+          `|-${
+            row.options
+              ? " " + toKeyValueString<MediaWikiTableRowOptions>(row.options)
+              : ""
+          }\n` +
           row.cells
             .map(
-              (cell) =>
-                (row.header ? `!` : `|`) +
+              (cell, cellIndex) =>
+                (row.header ? `!` : `|`).repeat(
+                  row.minimal && cellIndex > 0 ? 2 : 1
+                ) +
+                (row.minimal ? " " : "") +
+                (cell.options
+                  ? `${toKeyValueString<MediaWikiTableCellOptions>(
+                      cell.options
+                    )} | `
+                  : "") +
                 cell.content.map((content) => content.build()).join("") +
-                "\n"
+                (row.minimal ? "" : "\n")
             )
-            .join("")
+            .join(row.minimal ? " " : "") +
+          (row.minimal ? "\n" : "")
       )
       .join("")}|}`;
   }
