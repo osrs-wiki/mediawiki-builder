@@ -1,5 +1,12 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.2.0
+
+### Minor Changes
+
+- ae92034: Add support for table, row, and cell options in MediaWikiTable
+- ae92034: Add support for minimal table formatting in MediaWikiTable
+
 ## 1.1.2
 
 ### Patch Changes
