@@ -3,9 +3,9 @@
 exports[`MediaWikiTable it should build correctly with cell options 1`] = `
 "{|
 |- style=\\"width: 15em\\"
-!colspan=\\"2\\" | header
+! colspan=\\"2\\" | header
 |- style=\\"width: 15em\\"
-|style=\\"text-align: center;\\" | value
+| style=\\"text-align: center;\\" | value
 |}"
 `;
 
@@ -36,14 +36,14 @@ exports[`MediaWikiTable it should build correctly with no options, minimal 1`] =
 exports[`MediaWikiTable it should build correctly with no options, not minimal 1`] = `
 "{|
 |-
-!test1
-!test2
+! test1
+! test2
 |-
-|'''test1''' table1
-|'''test2''' table2
+| '''test1''' table1
+| '''test2''' table2
 |-
-|''test3'' table3
-|test4
+| ''test3'' table3
+| test4
  table4
 |}"
 `;
@@ -51,17 +51,17 @@ exports[`MediaWikiTable it should build correctly with no options, not minimal 1
 exports[`MediaWikiTable it should build correctly with row options 1`] = `
 "{|
 |- style=\\"width: 15em\\"
-!header
+! header
 |- style=\\"width: 15em\\"
-|value
+| value
 |}"
 `;
 
 exports[`MediaWikiTable it should build correctly with table options 1`] = `
 "{| class=\\"wikitable\\"
 |-
-!header
+! header
 |-
-|value
+| value
 |}"
 `;

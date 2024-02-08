@@ -1,6 +1,12 @@
 import MediaWikiContent from "../content";
 import { toKeyValueString } from "../utils/objects";
 
+export type MediaWikiTableParams = {
+  caption?: string;
+  rows: MediaWikiTableRow[];
+  options?: MediaWikiTableOptions;
+};
+
 export type MediaWikiTableRow = {
   cells: MediaWikiTableCell[];
   header?: boolean;
@@ -11,12 +17,6 @@ export type MediaWikiTableRow = {
 export type MediaWikiTableCell = {
   content: MediaWikiContent[];
   options?: MediaWikiTableCellOptions;
-};
-
-export type MediaWikiTableParams = {
-  caption?: string;
-  rows: MediaWikiTableRow[];
-  options?: MediaWikiTableOptions;
 };
 
 export type MediaWikiTableOptions = {
@@ -68,7 +68,7 @@ export class MediaWikiTable extends MediaWikiContent {
                 (row.header ? `!` : `|`).repeat(
                   row.minimal && cellIndex > 0 ? 2 : 1
                 ) +
-                (row.minimal ? " " : "") +
+                " " +
                 (cell.options
                   ? `${toKeyValueString<MediaWikiTableCellOptions>(
                       cell.options
