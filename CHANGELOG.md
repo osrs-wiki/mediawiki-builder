@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.2.1
+
+### Patch Changes
+
+- add2309: Fix spacing for flattened template output
+
 ## 1.2.0
 
 ### Minor Changes
