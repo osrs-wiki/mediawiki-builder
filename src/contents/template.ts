@@ -17,13 +17,14 @@ export class MediaWikiTemplate extends MediaWikiContent {
   }
 
   build() {
+    const expanded = this.params.length > 3;
     const params = this.params.reduce(
       (allParams, param) =>
         `${allParams}${this.params.length > 3 ? "\n" : ""}|${
-          param.key ? param.key + " = " : ""
+          param.key ? param.key + (expanded ? " = " : "=") : ""
         }${param.value}`,
       ""
     );
-    return `{{${this.name}${params}${this.params.length > 3 ? "\n" : ""}}}\n`;
+    return `{{${this.name}${params}${expanded ? "\n" : ""}}}\n`;
   }
 }
