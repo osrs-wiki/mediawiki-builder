@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.2.2
+
+### Patch Changes
+
+- c757290: Fix InfoboxItem update type
+
 ## 1.2.1
 
 ### Patch Changes
