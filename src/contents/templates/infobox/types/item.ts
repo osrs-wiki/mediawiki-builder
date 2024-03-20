@@ -7,7 +7,7 @@ export type InfoboxItem = {
   name: string;
   image: MediaWikiFile;
   release: MediaWikiDate | "";
-  update: MediaWikiLink | "";
+  update: string;
   removal?: MediaWikiDate;
   removalupdate?: MediaWikiLink;
   aka?: string;
