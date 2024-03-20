@@ -1,5 +1,12 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.2.3
+
+### Patch Changes
+
+- 2902f5c: Fix infobox name capitalization
+- 2902f5c: Do not include infobox params if they are undefined
+
 ## 1.2.2
 
 ### Patch Changes
