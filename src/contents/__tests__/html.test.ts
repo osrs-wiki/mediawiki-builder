@@ -17,4 +17,14 @@ describe("MediaWikiHTML", () => {
       "<center param=\"123\">\ntest'''test2'''\n</center>\n"
     );
   });
+
+  test("it should build correctly with collapsed option", () => {
+    const result = new MediaWikiHTML(
+      "center",
+      [new MediaWikiText("test")],
+      {},
+      { collapsed: true }
+    );
+    expect(result.build()).toBe("<center>test</center>");
+  });
 });
