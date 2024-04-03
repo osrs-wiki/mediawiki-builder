@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.3.0
+
+### Minor Changes
+
+- 5b64391: Add collapse option to MediaWikiHTML
+
 ## 1.2.3
 
 ### Patch Changes
