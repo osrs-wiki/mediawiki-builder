@@ -3,7 +3,7 @@ import { MediaWikiText } from "../text";
 
 describe("MediaWikiHeader", () => {
   test("it should build correctly with a string value", () => {
-    const header = new MediaWikiHeader("Test", 2);
+    const header = new MediaWikiHeader(" Test ", 2);
     expect(header.build()).toBe("==Test==");
   });
 
@@ -20,7 +20,7 @@ describe("MediaWikiHeader", () => {
       [
         new MediaWikiText("Start "),
         new MediaWikiText("Test", { italics: true }),
-        new MediaWikiText(" End"),
+        new MediaWikiText(" End "),
       ],
       3
     );
