@@ -18,12 +18,14 @@ export class MediaWikiHeader extends MediaWikiContent {
   }
 
   build() {
-    let parsedValue;
+    let parsedValue = "";
     if (this.children) {
       parsedValue = this.buildChildren();
     } else if (this.value) {
-      parsedValue = this.value.trim();
+      parsedValue = this.value;
     }
-    return `${"=".repeat(this.level)}${parsedValue}${"=".repeat(this.level)}`;
+    return `${"=".repeat(this.level)}${parsedValue.trim()}${"=".repeat(
+      this.level
+    )}`;
   }
 }
