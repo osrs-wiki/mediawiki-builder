@@ -1,5 +1,12 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.3.1
+
+### Patch Changes
+
+- bc8359d: Add tests for MediaWikiText
+- 86f6289: Trim headers
+
 ## 1.3.0
 
 ### Minor Changes
