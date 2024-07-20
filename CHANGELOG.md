@@ -1,5 +1,20 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.4.0
+
+### Minor Changes
+
+- 6524297: Add TemplateOptions to MediaWikiTemplate
+
+### Patch Changes
+
+- 25b294f: Bump ws from 7.5.9 to 7.5.10
+- b499838: Bump semver from 5.7.1 to 5.7.2
+- a444737: Bump json5 from 1.0.1 to 1.0.2
+- dd9b4a2: Bump tj-actions/changed-files from 35 to 41 in /.github/workflows
+- 5ee1ecd: Bump @babel/traverse from 7.18.6 to 7.24.5
+- 2068af6: Bump word-wrap from 1.2.3 to 1.2.5
+
 ## 1.3.1
 
 ### Patch Changes
