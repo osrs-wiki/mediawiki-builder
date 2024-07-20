@@ -19,4 +19,14 @@ describe("MediaWikiTemplate", () => {
 
     expect(template.build()).toMatchSnapshot();
   });
+
+  test("it should render collapsed with 4 or more params and collapsed option", () => {
+    const template = new MediaWikiTemplate("test", { collapsed: true });
+    template.add("one", "one");
+    template.add("two", "two");
+    template.add("three", "three");
+    template.add("four", "four");
+
+    expect(template.build()).toMatchSnapshot();
+  });
 });

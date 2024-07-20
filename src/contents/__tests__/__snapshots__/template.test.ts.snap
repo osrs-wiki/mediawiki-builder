@@ -1,5 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MediaWikiTemplate it should render collapsed with 4 or more params and collapsed option 1`] = `
+"{{test|one=one|two=two|three=three|four=four}}
+"
+`;
+
 exports[`MediaWikiTemplate it should render expanded with 4 or more params 1`] = `
 "{{test
 |one = one
