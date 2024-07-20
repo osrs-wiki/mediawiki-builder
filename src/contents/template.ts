@@ -2,14 +2,18 @@ import MediaWikiContent from "../content";
 
 export type TemplateParam = { key: string; value: string };
 
+export type TemplateOptions = { collapsed?: boolean };
+
 export class MediaWikiTemplate extends MediaWikiContent {
   name: string;
   params: TemplateParam[];
+  options?: TemplateOptions;
 
-  constructor(name: string) {
+  constructor(name: string, options?: TemplateOptions) {
     super();
     this.name = name;
     this.params = [];
+    this.options = options;
   }
 
   add(key: string, value: string) {
@@ -17,14 +21,14 @@ export class MediaWikiTemplate extends MediaWikiContent {
   }
 
   build() {
-    const expanded = this.params.length > 3;
+    const collapsed = this.options?.collapsed || this.params.length < 4;
     const params = this.params.reduce(
       (allParams, param) =>
-        `${allParams}${this.params.length > 3 ? "\n" : ""}|${
-          param.key ? param.key + (expanded ? " = " : "=") : ""
+        `${allParams}${collapsed ? "" : "\n"}|${
+          param.key ? param.key + (collapsed ? "=" : " = ") : ""
         }${param.value}`,
       ""
     );
-    return `{{${this.name}${params}${expanded ? "\n" : ""}}}\n`;
+    return `{{${this.name}${params}${collapsed ? "" : "\n"}}}\n`;
   }
 }
