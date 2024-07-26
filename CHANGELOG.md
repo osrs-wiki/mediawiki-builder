@@ -1,5 +1,15 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.5.0
+
+### Minor Changes
+
+- 4ada4be: Implement new project structure
+
+### Patch Changes
+
+- 4ada4be: Upgrade dependencies
+
 ## 1.4.0
 
 ### Minor Changes
