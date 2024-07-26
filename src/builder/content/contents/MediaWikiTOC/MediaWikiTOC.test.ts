@@ -1,4 +1,4 @@
-import { MediaWikiTOC } from "../../../../../dist";
+import { MediaWikiTOC } from "./MediaWikiTOC";
 
 describe("MediaWikiTOC", () => {
   it("should render correctly", () => {

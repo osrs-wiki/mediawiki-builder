@@ -1,5 +1,5 @@
-import { Template } from "./types";
-import { MediaWikiTemplate } from "../MediaWikiTemplate";
+import { MediaWikiTemplate } from "../../MediaWikiTemplate";
+import { Template } from "../Template";
 
 export class NewsPollTemplate extends Template {
   number?: number;

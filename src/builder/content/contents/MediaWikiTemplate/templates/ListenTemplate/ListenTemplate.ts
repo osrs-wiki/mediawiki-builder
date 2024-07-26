@@ -1,12 +1,6 @@
-import { Template } from "./types";
-import { MediaWikiTemplate } from "../MediaWikiTemplate";
-
-export type ListenAlignment = "left" | "right" | "center";
-
-export type ListeTemplateOptions = {
-  align?: ListenAlignment;
-  title?: string;
-};
+import { ListenAlignment, ListeTemplateOptions } from "./ListenTemplate.types";
+import { MediaWikiTemplate } from "../../MediaWikiTemplate";
+import { Template } from "../Template";
 
 export class ListenTemplate extends Template {
   align?: ListenAlignment;

@@ -1,6 +1,6 @@
-import { MediaWikiDate } from "../../../../MediaWikiDate/MediaWikiDate";
-import { MediaWikiFile } from "../../../../MediaWikiFile/MediaWikiFile";
-import { MediaWikiLink } from "../../../../MediaWikiLink/MediaWikiLink";
+import { MediaWikiDate } from "../../../../MediaWikiDate";
+import { MediaWikiFile } from "../../../../MediaWikiFile";
+import { MediaWikiLink } from "../../../../MediaWikiLink";
 
 export type InfoboxNpc = {
   name: string;

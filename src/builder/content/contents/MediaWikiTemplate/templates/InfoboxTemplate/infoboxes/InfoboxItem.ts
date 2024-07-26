@@ -1,7 +1,7 @@
-import { MediaWikiDate } from "../../../../MediaWikiDate/MediaWikiDate";
-import { MediaWikiFile } from "../../../../MediaWikiFile/MediaWikiFile";
-import { MediaWikiLink } from "../../../../MediaWikiLink/MediaWikiLink";
-import { InfoboxNo } from "../infobox";
+import { MediaWikiDate } from "../../../../MediaWikiDate";
+import { MediaWikiFile } from "../../../../MediaWikiFile";
+import { MediaWikiLink } from "../../../../MediaWikiLink";
+import { InfoboxNo } from "../InfoboxTemplate.types";
 
 export type InfoboxItem = {
   name: string;

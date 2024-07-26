@@ -1,10 +1,7 @@
 import { capitalize } from "../../../../../../utils/strings";
 import MediaWikiContent from "../../../../MediaWikiContent";
 import { MediaWikiTemplate } from "../../MediaWikiTemplate";
-import { Template } from "../types";
-
-export type InfoboxNo = "No";
-export type InfoboxYesNo = "Yes" | InfoboxNo;
+import { Template } from "../Template";
 
 export class InfoboxTemplate<T> extends Template {
   params: T;

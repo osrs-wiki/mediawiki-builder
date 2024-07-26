@@ -1,11 +1,6 @@
-import { Template } from "./types";
-import { MediaWikiTemplate } from "../MediaWikiTemplate";
-
-export type UpdateTemplateParams = {
-  category: string;
-  date: string;
-  url: string;
-};
+import { UpdateTemplateParams } from "./UpdateTemplate.types";
+import { MediaWikiTemplate } from "../../MediaWikiTemplate";
+import { Template } from "../Template";
 
 export class UpdateTemplate extends Template {
   category: string;

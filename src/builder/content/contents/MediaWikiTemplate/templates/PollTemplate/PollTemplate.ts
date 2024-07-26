@@ -1,10 +1,6 @@
-import { Template } from "./types";
-import { MediaWikiTemplate } from "../MediaWikiTemplate";
-
-export type PollAnswer = {
-  answer: string;
-  vote: string;
-};
+import { PollAnswer } from "./PollTemplate.types";
+import { MediaWikiTemplate } from "../../MediaWikiTemplate";
+import { Template } from "../Template";
 
 export class PollTemplate extends Template {
   answers: PollAnswer[];

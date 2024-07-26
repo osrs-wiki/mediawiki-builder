@@ -1,6 +1,6 @@
-import { Template } from "./types";
-import MediaWikiContent from "../../../MediaWikiContent";
-import { MediaWikiTemplate } from "../MediaWikiTemplate";
+import MediaWikiContent from "../../../../MediaWikiContent";
+import { MediaWikiTemplate } from "../../MediaWikiTemplate";
+import { Template } from "../Template";
 
 export class LetterTemplate extends Template {
   value: MediaWikiContent[] | MediaWikiContent | string;

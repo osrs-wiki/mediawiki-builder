@@ -1,4 +1,4 @@
-import { NewsPollTemplate } from "../newsPoll";
+import { NewsPollTemplate } from "./NewsPollTemplate";
 
 describe("NewsPollTemplate", () => {
   test("it should render with a number and question", () => {

@@ -1,7 +1,6 @@
-import { Template } from "./types";
-import { MediaWikiTemplate } from "../MediaWikiTemplate";
-
-export type PollPosition = "bottom" | "top";
+import { PollPosition } from "./PollWrapperTemplate.types";
+import { MediaWikiTemplate } from "../../MediaWikiTemplate";
+import { Template } from "../Template";
 
 export class PollWrapperTemplate extends Template {
   position: PollPosition;
