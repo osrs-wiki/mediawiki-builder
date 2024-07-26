@@ -26,7 +26,7 @@ jobs:
         with:
           always-auth: true
           cache: yarn
-          node-version: 18
+          node-version: 21
 
       - name: Install yarn packages
         run: yarn install --frozen-lockfile
