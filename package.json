@@ -1,6 +1,6 @@
 {
   "name": "@osrs-wiki/mediawiki-builder",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A tool set for building MediaWiki content with TypeScript, specifically targeting the OSRS Wiki.",
   "author": "Allen Kinzalow <allen.kinzalow@gmail.com>",
   "license": "GPL-3.0",
