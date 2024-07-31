@@ -1,5 +1,5 @@
-import MediaWikiContent from "../../../../MediaWikiContent";
 import { MediaWikiContents } from "../../../../MediaWikiContent.types";
+import { buildContents } from "../../../../MediaWikiContent.utils";
 import { MediaWikiTemplate } from "../../MediaWikiTemplate";
 import { Template } from "../Template";
 
@@ -12,16 +12,8 @@ export class LetterTemplate extends Template {
   }
 
   build() {
-    const parsedValue = Array.isArray(this.value)
-      ? this.value.reduce(
-          (value, content) => (content ? value + "" + content.build() : value),
-          ""
-        )
-      : this.value instanceof MediaWikiContent
-      ? this.value.build()
-      : this.value;
     const letterTemplate = new MediaWikiTemplate(this.name);
-    letterTemplate.add("", parsedValue);
+    letterTemplate.add("", buildContents(this.value));
     return letterTemplate;
   }
 }
