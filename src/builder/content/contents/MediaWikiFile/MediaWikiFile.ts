@@ -1,5 +1,6 @@
 import { MediaWikiFileOptions } from "./MediaWikiFile.types";
 import MediaWikiContent from "../../MediaWikiContent";
+import { buildContents } from "../../MediaWikiContent.utils";
 
 export class MediaWikiFile extends MediaWikiContent {
   fileName: string;
@@ -38,7 +39,7 @@ export class MediaWikiFile extends MediaWikiContent {
       options += `|${verticalAlignment}`;
     }
     if (caption) {
-      options += `|${caption.build()}`;
+      options += `|${buildContents(caption)}`;
     }
     if (link) {
       options += `|link=${link}`;

@@ -1,16 +1,15 @@
 import MediaWikiContent from "../../MediaWikiContent";
+import { MediaWikiContents } from "../../MediaWikiContent.types";
 
 export class MediaWikiExternalLink extends MediaWikiContent {
-  label: string;
   link: string;
 
-  constructor(label: string, link: string) {
-    super();
-    this.label = label;
+  constructor(label: MediaWikiContents, link: string) {
+    super(label);
     this.link = link;
   }
 
   build() {
-    return `[${this.link} ${this.label}]`;
+    return `[${this.link} ${this.buildChildren()}]`;
   }
 }

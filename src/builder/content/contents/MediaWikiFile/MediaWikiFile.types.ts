@@ -1,4 +1,4 @@
-import { MediaWikiText } from "../MediaWikiText/MediaWikiText";
+import { MediaWikiContents } from "../../MediaWikiContent.types";
 
 export type FileFormat = "frameless" | "frame" | "thumb";
 
@@ -19,7 +19,7 @@ export type FileResizing = {
 };
 
 export type MediaWikiFileOptions = {
-  caption?: MediaWikiText;
+  caption?: MediaWikiContents;
   format?: FileFormat;
   resizing?: FileResizing;
   horizontalAlignment?: FileHorizontalAlignment;
