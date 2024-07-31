@@ -1,5 +1,16 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.6.0
+
+### Minor Changes
+
+- e6e0434: Add MediaWikiContents for supporting various children content in MediaWikiContent
+- e6e0434: Change MediaWikiFile caption to MediaWikiContents
+- e6e0434: Change MediaWikiText value to MediaWikiContents
+- e6e0434: Change MediaWikiExternLink label to MediaWikiContents
+- e6e0434: Change MediaWikiHeader value to MediaWikiContents
+- e6e0434: Change MediaWikiListItem value to MediaWikiContents
+
 ## 1.5.0
 
 ### Minor Changes
