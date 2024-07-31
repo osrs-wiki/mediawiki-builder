@@ -1,29 +1,29 @@
 import { MediaWikiTextStyling } from "./MediaWikiText.types";
 import MediaWikiContent from "../../MediaWikiContent";
+import { MediaWikiContents } from "../../MediaWikiContent.types";
 
 export class MediaWikiText extends MediaWikiContent {
-  value: string;
   styling?: MediaWikiTextStyling;
 
-  constructor(value: string, styling?: MediaWikiTextStyling) {
-    super();
-    this.value = value;
+  constructor(value: MediaWikiContents, styling?: MediaWikiTextStyling) {
+    super(value);
     this.styling = styling;
   }
 
   build() {
-    if (this.value === "") {
-      return this.value;
+    let builtValue = this.buildChildren();
+    if (builtValue === "") {
+      return "";
     }
     if (this.styling?.bold) {
-      this.value = `'''${this.value}'''`;
+      builtValue = `'''${builtValue}'''`;
     }
     if (this.styling?.italics) {
-      this.value = `''${this.value}''`;
+      builtValue = `''${builtValue}''`;
     }
     if (this.styling?.underline) {
-      this.value = `<u>${this.value}</u>`;
+      builtValue = `<u>${builtValue}</u>`;
     }
-    return `${this.value}`;
+    return `${builtValue}`;
   }
 }

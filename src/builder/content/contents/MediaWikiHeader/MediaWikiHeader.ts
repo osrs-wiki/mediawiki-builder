@@ -1,29 +1,16 @@
 import MediaWikiContent from "../../MediaWikiContent";
+import { MediaWikiContents } from "../../MediaWikiContent.types";
 
 export class MediaWikiHeader extends MediaWikiContent {
-  value?: string;
   level: number;
 
-  constructor(
-    value: string | MediaWikiContent | MediaWikiContent[],
-    level: number
-  ) {
-    super(
-      Array.isArray(value) || value instanceof MediaWikiContent
-        ? value
-        : undefined
-    );
-    this.value = typeof value === "string" ? (value as string) : undefined;
+  constructor(value: MediaWikiContents, level: number) {
+    super(value);
     this.level = level;
   }
 
   build() {
-    let parsedValue = "";
-    if (this.children) {
-      parsedValue = this.buildChildren();
-    } else if (this.value) {
-      parsedValue = this.value;
-    }
+    const parsedValue = this.buildChildren();
     return `${"=".repeat(this.level)}${parsedValue.trim()}${"=".repeat(
       this.level
     )}`;

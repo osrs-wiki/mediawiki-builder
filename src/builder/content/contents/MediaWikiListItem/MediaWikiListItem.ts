@@ -1,28 +1,17 @@
 import { MediaWikiListItemOptions } from "./MediaWikiListItem.types";
 import MediaWikiContent from "../../MediaWikiContent";
+import { MediaWikiContents } from "../../MediaWikiContent.types";
 
 export class MediaWikiListItem extends MediaWikiContent {
-  value: MediaWikiContent[] | MediaWikiContent | string;
   options: MediaWikiListItemOptions;
 
-  constructor(
-    value: MediaWikiContent[] | MediaWikiContent | string,
-    options: MediaWikiListItemOptions
-  ) {
-    super();
-    this.value = value;
+  constructor(value: MediaWikiContents, options: MediaWikiListItemOptions) {
+    super(value);
     this.options = options;
   }
 
   build() {
-    const parsedValue = Array.isArray(this.value)
-      ? this.value.reduce(
-          (value, content) => (content ? value + "" + content.build() : value),
-          ""
-        )
-      : this.value instanceof MediaWikiContent
-      ? this.value.build()
-      : this.value;
+    const parsedValue = this.buildChildren();
     return `\n${(this.options.ordered ? "#" : "*").repeat(
       this.options.level
     )} ${parsedValue.trim()}`;

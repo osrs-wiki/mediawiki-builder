@@ -1,11 +1,12 @@
 import MediaWikiContent from "../../../../MediaWikiContent";
+import { MediaWikiContents } from "../../../../MediaWikiContent.types";
 import { MediaWikiTemplate } from "../../MediaWikiTemplate";
 import { Template } from "../Template";
 
 export class LetterTemplate extends Template {
-  value: MediaWikiContent[] | MediaWikiContent | string;
+  value: MediaWikiContents | string;
 
-  constructor(value: MediaWikiContent[] | MediaWikiContent | string) {
+  constructor(value: MediaWikiContents | string) {
     super("Letter");
     this.value = value;
   }
