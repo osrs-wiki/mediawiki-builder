@@ -16,7 +16,7 @@ export class InfoboxTemplate<T> extends Template {
     const infoboxTemplate = new MediaWikiTemplate(this.name);
     Object.keys(this.params).forEach((key) => {
       const value = params[key as keyof T];
-      if (value) {
+      if (value !== undefined) {
         let parsedValue = "";
         if (typeof value === "boolean") {
           parsedValue = value ? "Yes" : "No";
