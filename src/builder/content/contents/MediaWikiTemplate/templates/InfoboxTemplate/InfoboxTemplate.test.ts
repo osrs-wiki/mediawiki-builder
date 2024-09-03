@@ -6,4 +6,10 @@ describe("InfoboxTemplate", () => {
       "{{Infobox Test|test=test}}\n"
     );
   });
+
+  it("should build with falsey values", () => {
+    expect(new InfoboxTemplate("Test", { test: false }).build().build()).toBe(
+      "{{Infobox Test|test=No}}\n"
+    );
+  });
 });
