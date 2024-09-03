@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.6.1
+
+### Patch Changes
+
+- 2898aba: Correctly build InfoBoxTemplate falsey values
+
 ## 1.6.0
 
 ### Minor Changes
