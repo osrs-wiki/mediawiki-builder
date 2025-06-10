@@ -23,7 +23,7 @@ export class InfoboxTemplate<T> extends Template {
         } else if (value instanceof MediaWikiContent) {
           parsedValue = value.build();
         } else if (Array.isArray(value)) {
-          if (value.length > 0 && value[0] instanceof MediaWikiContent) {
+          if (value.length > 0 && value.every((v) => v instanceof MediaWikiContent)) {
             parsedValue = value
               .filter((v) => v && v !== null)
               .map((v) => (v instanceof MediaWikiContent ? v.build() : `${v}`))
