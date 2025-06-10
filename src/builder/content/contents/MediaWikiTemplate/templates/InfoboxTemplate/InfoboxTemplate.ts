@@ -23,13 +23,15 @@ export class InfoboxTemplate<T> extends Template {
         } else if (value instanceof MediaWikiContent) {
           parsedValue = value.build();
         } else if (Array.isArray(value)) {
-          if (value.length > 0 && value.every((v) => v instanceof MediaWikiContent)) {
+          if (
+            value.every((v) => typeof v === "string" || typeof v === "number")
+          ) {
+            parsedValue = value.filter((v) => v && v !== null).join(", ");
+          } else {
             parsedValue = value
               .filter((v) => v && v !== null)
               .map((v) => (v instanceof MediaWikiContent ? v.build() : `${v}`))
               .join(" ");
-          } else {
-            parsedValue = value.filter((v) => v && v !== null).join(", ");
           }
         } else if (value) {
           parsedValue = `${value}`;

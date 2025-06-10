@@ -29,4 +29,22 @@ describe("InfoboxTemplate", () => {
     });
     expect(content.build().build()).toBe("{{Infobox Test|test=Item1 Item2}}\n");
   });
+
+  it("should build with mixed values", () => {
+    const content = new InfoboxTemplate("Test", {
+      test: [new MediaWikiText("Item1"), "Item2", 3],
+    });
+    expect(content.build().build()).toBe(
+      "{{Infobox Test|test=Item1 Item2 3}}\n"
+    );
+  });
+
+  it("should build with an array of strings and numbers", () => {
+    const content = new InfoboxTemplate("Test", {
+      test: ["Item1", "Item2", 3, 4],
+    });
+    expect(content.build().build()).toBe(
+      "{{Infobox Test|test=Item1, Item2, 3, 4}}\n"
+    );
+  });
 });
