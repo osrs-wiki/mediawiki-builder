@@ -1,5 +1,15 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.8.0
+
+### Minor Changes
+
+- 22251d1: Add support for rendering no children tags in MediaWikiHTML
+
+### Patch Changes
+
+- faf6c24: Bump tj-actions/changed-files from 41 to 46 in /.github/workflows
+
 ## 1.7.0
 
 ### Minor Changes
