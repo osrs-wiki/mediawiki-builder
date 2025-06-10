@@ -8,7 +8,7 @@ export class MediaWikiHTML extends MediaWikiContent {
 
   constructor(
     tag: string,
-    children: MediaWikiContent[],
+    children?: MediaWikiContent[],
     attributes?: { [key: string]: string },
     options?: MediaWikiHTMLOptions
   ) {
@@ -19,14 +19,19 @@ export class MediaWikiHTML extends MediaWikiContent {
   }
 
   build() {
-    return `<${this.tag}${
-      this.attributes
-        ? Object.keys(this.attributes).map(
-            (key) => ` ${key}=\"${this.attributes?.[key]}\"`
-          )
-        : ""
-    }>${this.options?.collapsed ? "" : "\n"}${this.buildChildren()}${
+    const attributes = this.attributes
+      ? Object.keys(this.attributes).map(
+          (key) => ` ${key}=\"${this.attributes?.[key]}\"`
+        )
+      : "";
+    const children = this.buildChildren();
+    if (children.length === 0) {
+      return `<${this.tag}${attributes}/>`;
+    }
+    return `<${this.tag}${attributes}>${
       this.options?.collapsed ? "" : "\n"
-    }</${this.tag}>${this.options?.collapsed ? "" : "\n"}`;
+    }${children}${this.options?.collapsed ? "" : "\n"}</${this.tag}>${
+      this.options?.collapsed ? "" : "\n"
+    }`;
   }
 }
