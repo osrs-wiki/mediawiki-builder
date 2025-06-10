@@ -27,4 +27,9 @@ describe("MediaWikiHTML", () => {
     );
     expect(result.build()).toBe("<center>test</center>");
   });
+
+  test("it should build correctly with empty children", () => {
+    const result = new MediaWikiHTML("br");
+    expect(result.build()).toBe("<br/>");
+  });
 });
