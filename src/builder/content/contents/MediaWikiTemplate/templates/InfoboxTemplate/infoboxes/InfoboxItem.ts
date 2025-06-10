@@ -1,4 +1,3 @@
-import MediaWikiContent from "../../../../../MediaWikiContent";
 import { MediaWikiBreak } from "../../../../MediaWikiBreak";
 import { MediaWikiDate } from "../../../../MediaWikiDate";
 import { MediaWikiFile } from "../../../../MediaWikiFile";
