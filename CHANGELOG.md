@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.7.0
+
+### Minor Changes
+
+- c19fd05: Add support for rendering MediaWikiContent array in InfoboxTemplate params
+
 ## 1.6.1
 
 ### Patch Changes
