@@ -1,3 +1,4 @@
+import { MediaWikiBreak } from "../../../../MediaWikiBreak";
 import { MediaWikiDate } from "../../../../MediaWikiDate";
 import { MediaWikiFile } from "../../../../MediaWikiFile";
 import { MediaWikiLink } from "../../../../MediaWikiLink";
@@ -5,7 +6,7 @@ import { InfoboxNo } from "../InfoboxTemplate.types";
 
 export type InfoboxItem = {
   name: string;
-  image: MediaWikiFile;
+  image: MediaWikiFile | (MediaWikiFile | MediaWikiBreak)[];
   release: MediaWikiDate | "";
   update: string;
   removal?: MediaWikiDate;
