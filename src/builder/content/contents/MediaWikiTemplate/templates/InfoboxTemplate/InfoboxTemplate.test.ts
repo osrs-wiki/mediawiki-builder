@@ -47,4 +47,11 @@ describe("InfoboxTemplate", () => {
       "{{Infobox Test|test=Item1, Item2, 3, 4}}\n"
     );
   });
+
+  it("should build with 0 number value", () => {
+    const content = new InfoboxTemplate("Test", {
+      test: 0,
+    });
+    expect(content.build().build()).toBe("{{Infobox Test|test=0}}\n");
+  });
 });
