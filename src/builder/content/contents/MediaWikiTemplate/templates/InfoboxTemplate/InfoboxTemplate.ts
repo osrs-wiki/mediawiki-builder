@@ -33,7 +33,7 @@ export class InfoboxTemplate<T> extends Template {
               .map((v) => (v instanceof MediaWikiContent ? v.build() : `${v}`))
               .join(" ");
           }
-        } else if (value) {
+        } else if (value !== undefined && value !== null) {
           parsedValue = `${value}`;
         }
         infoboxTemplate.add(key, parsedValue);
