@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.8.1
+
+### Patch Changes
+
+- 61d2155: Fix InfoboxTemplate number 0 parsing
+
 ## 1.8.0
 
 ### Minor Changes
