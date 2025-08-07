@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.8.2
+
+### Patch Changes
+
+- 32c614c: Fix TypeError when building content arrays containing undefined elements by adding safety filter to buildContents function.
+
 ## 1.8.1
 
 ### Patch Changes
