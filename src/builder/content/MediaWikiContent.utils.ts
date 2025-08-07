@@ -10,6 +10,10 @@ export const buildContents = (contents: string | MediaWikiContents): string => {
     return contents;
   }
   return Array.isArray(contents)
-    ? contents.reduce((value, content) => (value += content.build()), "")
+    ? contents
+        .filter(
+          (content) => content != null && typeof content.build === "function"
+        )
+        .reduce((value, content) => (value += content.build()), "")
     : contents.build();
 };
