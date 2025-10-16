@@ -21,6 +21,35 @@ exports[`MediaWikiTable it should build correctly with cell options, minimal 1`]
 |}"
 `;
 
+exports[`MediaWikiTable it should build correctly with individual cell headers 1`] = `
+"{|
+|-
+! Name
+| John
+|-
+! Age
+| 25
+|}"
+`;
+
+exports[`MediaWikiTable it should build correctly with individual cell headers, minimal 1`] = `
+"{|
+|-
+! Name || John !! Age || 25
+|}"
+`;
+
+exports[`MediaWikiTable it should build correctly with mixed row and cell headers 1`] = `
+"{|
+|-
+! Column 1
+! Column 2
+|-
+! Row header
+| Data
+|}"
+`;
+
 exports[`MediaWikiTable it should build correctly with no options, minimal 1`] = `
 "{|
 |-
