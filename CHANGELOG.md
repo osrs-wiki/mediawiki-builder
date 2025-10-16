@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.9.0
+
+### Minor Changes
+
+- d3546a8: Add support for individual table cell headers via header option in MediaWikiTableCellOptions
+
 ## 1.8.2
 
 ### Patch Changes
