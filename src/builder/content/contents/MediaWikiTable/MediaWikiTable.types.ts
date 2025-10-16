@@ -31,6 +31,7 @@ export type MediaWikiTableRowOptions = {
 export type MediaWikiTableCellOptions = {
   class?: string;
   colspan?: number;
+  header?: boolean;
   rowspan?: number;
   style?: string;
 };

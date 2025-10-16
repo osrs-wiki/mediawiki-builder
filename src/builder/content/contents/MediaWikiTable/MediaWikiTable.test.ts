@@ -262,4 +262,101 @@ describe("MediaWikiTable", () => {
     });
     expect(table.build()).toMatchSnapshot();
   });
+
+  test("it should build correctly with individual cell headers", () => {
+    const table = new MediaWikiTable({
+      rows: [
+        {
+          cells: [
+            {
+              content: [new MediaWikiText("Name")],
+              options: {
+                header: true,
+              },
+            },
+            {
+              content: [new MediaWikiText("John")],
+            },
+          ],
+        },
+        {
+          cells: [
+            {
+              content: [new MediaWikiText("Age")],
+              options: {
+                header: true,
+              },
+            },
+            {
+              content: [new MediaWikiText("25")],
+            },
+          ],
+        },
+      ],
+    });
+    expect(table.build()).toMatchSnapshot();
+  });
+
+  test("it should build correctly with individual cell headers, minimal", () => {
+    const table = new MediaWikiTable({
+      rows: [
+        {
+          minimal: true,
+          cells: [
+            {
+              content: [new MediaWikiText("Name")],
+              options: {
+                header: true,
+              },
+            },
+            {
+              content: [new MediaWikiText("John")],
+            },
+            {
+              content: [new MediaWikiText("Age")],
+              options: {
+                header: true,
+              },
+            },
+            {
+              content: [new MediaWikiText("25")],
+            },
+          ],
+        },
+      ],
+    });
+    expect(table.build()).toMatchSnapshot();
+  });
+
+  test("it should build correctly with mixed row and cell headers", () => {
+    const table = new MediaWikiTable({
+      rows: [
+        {
+          header: true,
+          cells: [
+            {
+              content: [new MediaWikiText("Column 1")],
+            },
+            {
+              content: [new MediaWikiText("Column 2")],
+            },
+          ],
+        },
+        {
+          cells: [
+            {
+              content: [new MediaWikiText("Row header")],
+              options: {
+                header: true,
+              },
+            },
+            {
+              content: [new MediaWikiText("Data")],
+            },
+          ],
+        },
+      ],
+    });
+    expect(table.build()).toMatchSnapshot();
+  });
 });

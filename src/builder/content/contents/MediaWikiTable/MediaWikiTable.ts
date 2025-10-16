@@ -35,20 +35,33 @@ export class MediaWikiTable extends MediaWikiContent {
               : ""
           }\n` +
           row.cells
-            .map(
-              (cell, cellIndex) =>
-                (row.header ? `!` : `|`).repeat(
+            .map((cell, cellIndex) => {
+              // Filter out 'header' from cell options for toKeyValueString
+              const cellOptionsForOutput = cell.options
+                ? Object.fromEntries(
+                    Object.entries(cell.options).filter(
+                      ([key]) => key !== "header"
+                    )
+                  )
+                : undefined;
+              const hasOptionsForOutput =
+                cellOptionsForOutput &&
+                Object.keys(cellOptionsForOutput).length > 0;
+
+              return (
+                (row.header || cell.options?.header ? `!` : `|`).repeat(
                   row.minimal && cellIndex > 0 ? 2 : 1
                 ) +
                 " " +
-                (cell.options
+                (hasOptionsForOutput
                   ? `${toKeyValueString<MediaWikiTableCellOptions>(
-                      cell.options
+                      cellOptionsForOutput as MediaWikiTableCellOptions
                     )} | `
                   : "") +
                 cell.content.map((content) => content.build()).join("") +
                 (row.minimal ? "" : "\n")
-            )
+              );
+            })
             .join(row.minimal ? " " : "") +
           (row.minimal ? "\n" : "")
       )
