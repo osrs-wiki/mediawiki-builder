@@ -21,7 +21,9 @@ export class MediaWikiTemplate extends MediaWikiContent {
   }
 
   build() {
-    const collapsed = this.options?.collapsed || this.params.length < 4;
+    const collapsed =
+      !!this.options?.collapsed ||
+      (this.options?.collapsed === undefined && this.params.length < 4);
     const params = this.params.reduce(
       (allParams, param) =>
         `${allParams}${collapsed ? "" : "\n"}|${
