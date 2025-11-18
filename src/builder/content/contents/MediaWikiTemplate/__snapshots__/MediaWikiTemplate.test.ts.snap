@@ -15,6 +15,15 @@ exports[`MediaWikiTemplate it should render expanded with 4 or more params 1`] =
 "
 `;
 
+exports[`MediaWikiTemplate it should render expanded with less than 4 params when collapsed is false 1`] = `
+"{{test
+|one = one
+|two = two
+|three = three
+}}
+"
+`;
+
 exports[`MediaWikiTemplate it should render flattened with less than 4 params 1`] = `
 "{{test|one=one|two=two|three=three}}
 "
