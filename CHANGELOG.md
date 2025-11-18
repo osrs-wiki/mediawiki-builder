@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.9.1
+
+### Patch Changes
+
+- 0d9df9f: Fix MediaWikiTemplate collapsing with collapsed:false when <4 params existed
+
 ## 1.9.0
 
 ### Minor Changes
