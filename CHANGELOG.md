@@ -1,5 +1,11 @@
 # @osrs-wiki/mediawiki-builder
 
+## 1.9.2
+
+### Patch Changes
+
+- 3fc2eaa: Export MediaWikiContent types & utils
+
 ## 1.9.1
 
 ### Patch Changes
